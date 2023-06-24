@@ -1,9 +1,9 @@
 .App {
-  text-align: center;
 }
 
 .App footer {
-  font-size: 12px;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
