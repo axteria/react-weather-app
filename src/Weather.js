@@ -3,14 +3,21 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+      ready: true, 
+      city: response.data.name,
+      date: "Wednesday 07:00",
+      description: response.data.weather[0].description,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="weather">
         <form>
@@ -34,22 +41,22 @@ export default function Weather() {
           </div>
         </form>
 
-        <h1>Melbourne</h1>
+        <h1>{weatherData.city}</h1>
 
         <ul>
-          <li>Wednesday 07:00</li>
-          <li>Mostly Cloudy</li>
+          <li>{weatherData.date}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
 
         <div className="row mt-3">
           <div className="col-6">
             <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Mostly Cloudy"
+              src={weatherData.iconUrl}
+              alt={weatherData.description}
               style={{ verticalAlign: "middle" }}
             />
             <span className="temperature" style={{ verticalAlign: "middle" }}>
-              {temperature}
+              {Math.round(weatherData.temperature)}
             </span>
             <span className="unit" style={{ verticalAlign: "top" }}>
               °C
@@ -57,9 +64,8 @@ export default function Weather() {
           </div>
           <div className="col-6">
             <ul>
-              <li>Precipitation 15%</li>
-              <li>Humidity: 72%</li>
-              <li>Wind: 13 km/h</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
         </div>
