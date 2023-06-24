@@ -42,7 +42,9 @@ export default function Weather() {
           <span className="temperature" style={{ verticalAlign: "middle" }}>
             6
           </span>
-          <span className="unit">°C</span>
+          <span className="unit" style={{ verticalAlign: "top" }}>
+            °C
+          </span>
         </div>
         <div className="col-6">
           <ul>
