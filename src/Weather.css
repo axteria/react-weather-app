@@ -1,8 +1,12 @@
 .weather {
-  border: 1px solid rgb(196, 196, 197);
+  border: 1px solid rgb(186, 185, 185);
   border-radius: 6px;
   padding: 16px;
   margin: 30px auto;
+}
+
+.weather form {
+  margin-bottom: 20px;
 }
 
 .weather ul {
@@ -18,10 +22,12 @@
 
 .weather img {
   height: 64px;
+  
 }
 
 .weather .temperature {
   font-weight: bold;
   font-size: 64px;
   font-weight: 400;
+  display: inline-block;
 }

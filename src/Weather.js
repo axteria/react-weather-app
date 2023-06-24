@@ -14,6 +14,7 @@ export default function Weather() {
               autoFocus="on"
             />
           </div>
+
           <div className="col-3">
             <input
               type="submit"
@@ -25,19 +26,23 @@ export default function Weather() {
       </form>
 
       <h1>Melbourne</h1>
+
       <ul>
         <li>Wednesday 07:00</li>
         <li>Mostly Cloudy</li>
       </ul>
 
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-6">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="Mostly Cloudy"
+            style={{ verticalAlign: "middle" }}
           />
-          <span className="temperature">6</span>
-          <span className="units">°C</span>
+          <span className="temperature" style={{ verticalAlign: "middle" }}>
+            6
+          </span>
+          <span className="unit">°C</span>
         </div>
         <div className="col-6">
           <ul>
