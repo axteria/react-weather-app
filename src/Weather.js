@@ -5,9 +5,6 @@ export default function Weather() {
   return (
     <div>
       <h1>testing</h1>
-      <footer>
-        Open-sourced by Faye.
-      </footer>
     </div>
   );
 }
