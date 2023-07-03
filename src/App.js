@@ -8,6 +8,7 @@ function App() {
         <Weather defaultCity="Melbourne" />
         <footer>
           <a
+            rel="noreferrer"
             href="https://github.com/axteria/react-weather-app"
             className="link-secondary"
             target="_blank"
