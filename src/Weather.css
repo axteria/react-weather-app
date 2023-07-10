@@ -29,17 +29,25 @@
   margin-right: 10px;
 }
 
+.Weather canvas {
+  margin-right: 5px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
 .weather .temperature {
   font-weight: bold;
+  color: black;
   font-size: 64px;
   font-weight: 400;
-  display: inline-block;
   line-height: 10px;
-  color: black;
 }
 
 .weather .unit {
+  color: black;
   font-size: 16px;
   font-weight: 400;
-  margin-left: 5px;
+  position: relative;
+  line-height: 1;
+  top: -34px;
 }

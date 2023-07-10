@@ -17,21 +17,19 @@ export default function WeatherInfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="clearfix">
-            <WeatherIcon
-              code={props.data.icon}
-              style={{ verticalAlign: "middle" }}
-              className="float-left"
-            />
-          </div>
-          <div className="float-left">
-            <span className="temperature" style={{ verticalAlign: "middle" }}>
-              {Math.round(props.data.temperature)}
-            </span>
-            <span className="unit" style={{ verticalAlign: "top" }}>
-              °C
-            </span>
+            <div className="float-left">
+              <WeatherIcon code={props.data.icon} />
+            </div>
+            
+            <div className="float-left">
+              <span className="temperature">
+                {Math.round(props.data.temperature)}
+              </span>
+              <span className="unit">°C</span>
+            </div>
           </div>
         </div>
+
         <div className="col-6">
           <ul>
             <li>Humidity: {props.data.humidity}%</li>
